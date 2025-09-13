@@ -10,8 +10,10 @@
 :root {
   --bg: #f9f9f9;
   --text: #111;
-  --card: rgba(255, 255, 255, 0.1);
+  --card: rgba(0, 0, 0, 0.05);
   --accent: #00eaff;
+  --home-text: #111;
+  --social-icon: #111;
 }
 
 body.dark {
@@ -19,6 +21,8 @@ body.dark {
   --text: #fff;
   --card: rgba(255, 255, 255, 0.05);
   --accent: #ff4ecd;
+  --home-text: #fff;
+  --social-icon: #fff;
 }
 
 body {
@@ -97,7 +101,7 @@ header nav a:hover::after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--home-text);
   background: url('assets/bg.jpg') no-repeat center/cover;
 }
 
@@ -160,12 +164,45 @@ section {
   background: var(--card);
   padding: 1.5rem;
   border-radius: 16px;
-  width: 250px;
+  width: 300px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 0 20px var(--accent);
+}
+
+.project-card h3 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.project-tech span {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* Animations */
@@ -213,7 +250,7 @@ footer {
   height: 45px;
   border-radius: 50%;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--social-icon);
   text-decoration: none;
   transition: 0.3s ease;
   background: var(--card);
